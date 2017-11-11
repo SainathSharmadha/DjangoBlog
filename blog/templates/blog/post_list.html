@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>Django Workshop blog</title>
+    </head>
+    <body>
+ <div>
+            <h1><span style="color:pink">Sharmadha's</span> First Blog on <span style="color:blue">
+                <a href="https://tutorial.djangogirls.org/en/html/">Django Girl's Workshop</a>
+                </span>
+            </h1>
+        </div>
+         {% for post in posts %}
+        <div>
+            <p>published: 14.06.2014, 12:14</p>
+            <h2>{{post.title}}</h2>
+            <p><img src="{{post.picture.url}}"></p>
+        </div>
+
+    <div>
+           <b>Enter comment:</b>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ comment_form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+     </div>
+
+
+        {% endfor %}
+    </body>
+</html>

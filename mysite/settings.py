@@ -90,6 +90,9 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Calcutta'
 
+MEDIA_ROOT='/Users/ssainath/djangogirls/'
+MEDIA_URL = '/djangogirls/'
+
 USE_I18N = True
 
 USE_L10N = True
