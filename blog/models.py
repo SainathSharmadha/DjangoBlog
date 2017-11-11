@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from .validators import validate_file_extension
 # Create your models here.
 
 class UserComment(models.Model):
@@ -14,7 +15,7 @@ class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
     text = models.TextField()
-    picture = models.ImageField()
+    picture = models.ImageField(validators=[validate_file_extension])
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True,null=True)
     user_comments = []
